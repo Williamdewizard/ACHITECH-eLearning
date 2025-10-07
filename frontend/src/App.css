@@ -1,0 +1,345 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #74c69d 0%, #f5f7fa 100%);
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    background: linear-gradient(90deg, #2E8B57 0%, #3CB371 50%, #32CD32 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://source.unsplash.com/random/1920x1080/?education,learning') center/cover no-repeat;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+header .logo, header h1, nav ul {
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #FFD700;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    color: #FFD700;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 400px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    color: #333;
+}
+
+.banner-text h2 {
+    font-size: 36px;
+    margin: 0;
+    color: #2E8B57;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin: 10px 0 20px;
+}
+
+/* ===== BUTTONS ===== */
+.btn, .enroll-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover, .enroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #4ECDC4, #FF6B6B);
+}
+
+/* ===== CARDS ===== */
+.card, .course-card, .progress-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover, .course-card:hover, .progress-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.course-card img {
+    display: block;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ===== COURSE GRID ===== */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    overflow: hidden;
+}
+
+.course-card h2, .course-card h3 {
+    color: #2E8B57;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ===== PROGRESS ===== */
+.progress-bar {
+    height: 20px;
+    background: linear-gradient(90deg, #e0e0e0 0%, #f5f5f5 100%);
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #FF6B6B 0%, #4ECDC4 100%);
+    transition: width 0.3s ease;
+}
+
+/* ===== FORMS ===== */
+.form-group input, .post-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .post-form textarea:focus {
+    outline: none;
+    border-color: #4ECDC4;
+    box-shadow: 0 0 8px rgba(78, 205, 196, 0.3);
+}
+
+/* ===== FORUM ===== */
+.post {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.post-author {
+    font-weight: bold;
+    color: #2E8B57;
+}
+
+.post-date {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.post-content {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.admin-badge {
+    background: linear-gradient(45deg, #FFC107, #FF9800);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: linear-gradient(90deg, #333 0%, #555 100%);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://source.unsplash.com/random/1920x200/?footer,pattern') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+footer * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== TOAST NOTIFICATIONS ===== */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.toast.success {
+    background: linear-gradient(45deg, #4CAF50, #66BB6A);
+}
+
+.toast.error {
+    background: linear-gradient(45deg, #F44336, #EF5350);
+}
+
+/* ===== GREETING ===== */
+.greeting {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.username {
+    font-style: italic;
+    color: #FFF;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-text h2 {
+        font-size: 28px;
+    }
+
+    .banner-text p {
+        font-size: 16px;
+    }
+
+    .greeting {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
