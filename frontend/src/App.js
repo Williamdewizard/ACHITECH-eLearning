@@ -4,31 +4,45 @@ import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Assignment from "./pages/Assignment";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 import OfflineBanner from "./components/OfflineBanner";
-import 'bootstrap/dist/css/bootstrap.min.css'; // Add this if not in index.js
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
       <OfflineBanner />
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <header>
         <div className="container">
-          <Link className="navbar-brand" to="/">MUBS E-Learning</Link>
-          <div className="navbar-nav ms-auto">
-            <Link className="nav-link" to="/">Home</Link>
-            <Link className="nav-link" to="/courses">Courses</Link>
-            <Link className="nav-link" to="/login">Login</Link>
+          <div className="logo">
+            <img src="https://moodle.org/pluginfile.php/1/theme_boost/logo/1693400000/logo.png" alt="ACHITECH Logo" />
+            <h1>ACHITECH E-Learning</h1>
           </div>
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/courses">Courses</Link></li>
+              <li><Link to="/login">Login</Link></li>
+            </ul>
+          </nav>
         </div>
-      </nav>
-      <div className="container mt-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/assignment/:id" element={<Assignment />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
+      </header>
+      <main className="main-layout">
+        <Sidebar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/assignment/:id" element={<Assignment />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 }
