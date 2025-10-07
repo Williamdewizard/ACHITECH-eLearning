@@ -7,18 +7,16 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import OfflineBanner from "./components/OfflineBanner";
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <OfflineBanner />
       <header>
         <div className="container">
           <div className="logo">
-            <img src="https://moodle.org/pluginfile.php/1/theme_boost/logo/1693400000/logo.png" alt="ACHITECH Logo" />
-            <h1>ACHITECH E-Learning</h1>
+            <img src="/logo.png" alt="MUBS Logo" />
+            <h1>MUBS E-Learning</h1>
           </div>
           <nav>
             <ul>
